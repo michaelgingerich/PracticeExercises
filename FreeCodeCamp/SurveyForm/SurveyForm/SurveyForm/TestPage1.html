@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Form</title>
+    <style>
+        #title {
+            background-color: gray;
+            color: lightgray;
+            text-align: center;
+        }
+
+        #description-div {
+            grid-area: description;
+            background-color: white;
+            text-align: center;
+        }
+
+        body {
+            background-color: gray;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 25% 50% 25%;
+            grid-template-areas: "left-whitespace form right-whitespace";
+        }
+
+        fieldset {
+            border: none;
+        }
+
+        textarea {
+            width: 20em;
+        }
+
+        #name {
+            width: 20em;
+            height: 1.5em;
+        }
+
+        #email {
+            width: 20em;
+            height: 1.5em;
+        }
+
+        #age {
+            width: 20em;
+            height: 1.5em;
+        }
+
+        #left-whitespace {
+            grid-area: left-whitespace;
+        }
+
+        #right-whitespace {
+            grid-area: right-whitespace;
+        }
+
+        #survey-form {
+            grid-area: form;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: auto;
+            grid-template-areas: "description description" "form-labels form-input" "submit submit";
+        }
+
+        #form-labels {
+            grid-area: form-labels;
+            display: grid;
+            grid-template-rows: repeat(3, 2em) 3em 5em 2em 15em 5fr 2fr 1fr;
+            grid-template-areas: "name-label" "email-label" "number-label" "dropdown-label" "recommend-label" "likeMost-label" "improve-label" "additional-comments-label";
+            padding: 0em 1em 0em 0em;
+            background-color: white;
+            text-align: right;
+        }
+
+        #form-input {
+            grid-area: form-input;
+            display: grid;
+            grid-template-rows: repeat(3, 2em) 3em 5em 2em 15em 5fr 2fr 1fr;
+            grid-template-areas: "name" "email" "age" "dropdown" "recommend-radios" "likeMost" "improve-fieldset" "additional-comments";
+            padding: 0em 0em 0em 1em;
+            background-color: white;
+        }
+
+        #name-label-div {
+            grid-area: name-label;
+        }
+
+        #name-div {
+            grid-area: name;
+        }
+
+        #email-label-div {
+            grid-area: email-label;
+        }
+
+        #email-div {
+            grid-area: email;
+        }
+
+        #number-label-div {
+            grid-area: number-label;
+        }
+
+        #age-div {
+            grid-area: age;
+        }
+
+        #dropdown-label-div {
+            grid-area: dropdown-label;
+        }
+
+        #dropdown-div {
+            grid-area: dropdown;
+        }
+
+        #recommend-label-div {
+            grid-area: recommend-label;
+        }
+
+        #recommend-radios-div {
+            grid-area: recommend-radios;
+        }
+
+        #likeMost-label-div {
+            grid-area: likeMost-label;
+        }
+
+        #likeMost-div {
+            grid-area: likeMost;
+        }
+
+        #improve-label-div {
+            grid-area: improve-label;
+        }
+
+        #improve-fieldset-div {
+            grid-area: improve-fieldset;
+        }
+
+        #additional-comments-label-div {
+            grid-area: additional-comments-label;
+        }
+
+        #additional-comments-div {
+            grid-area: additional-comments;
+        }
+
+        #submit-div {
+            grid-area: submit;
+            background-color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="title">Survey Form</h1>
+    </header>
+    <main>
+        <div id="left-whitespace"></div>
+        <div id="right-whitespace"></div>
+        <form id="survey-form">
+            <div id="description-div">
+                <p id="description">Let us know how we can improve freeCodeCamp</p>
+            </div>
+            <div id="form-labels">
+                <div id="name-label-div">
+                    <label for="name" id="name-label"><sup>*</sup>Name:</label>
+                </div>
+                <div id="email-label-div">
+                    <label for="email" id="email-label"><sup>*</sup>Email:</label>
+                </div>
+                <div id="age-label-div">
+                    <label for="age" id="number-label"><sup>*</sup>Age:</label>
+                </div>
+                <div id="dropdown-label-div">
+                    <label for="dropdown" id="dropdown-label">Which option best describes your current role?</label>
+                </div>
+                <div id="recommend-label-div">
+                    <label for="recommend-radios" id="recommend-label"><sup>*</sup>How likely is that you would recommend freeCodeCamp to a friend?</label>
+                </div>
+                <div id="likeMost-label-div">
+                    <label for="likeMost" id="likeMost-label">What do you like most in FCC:</label>
+                </div>
+                <div id="improve-label-div">
+                    <label for="improve-fieldSet" id="improve-label">Things that should be improved in the future (Check all that apply):</label>
+                </div>
+                <div id="additional-comments-label">
+                    <label for="additional-comments" id="additional-comments-label">Any Comments or Suggestions?</label>
+                </div>
+            </div>
+            <div id="form-input">
+                <div id="name-div">
+                    <input placeholder="Please enter your name" type="text" id="name" required />
+                </div>
+                <div id="email-div">
+                    <input placeholder="Please enter your email address" type="email" id="email" required />
+                </div>
+                <div id="age-div">
+                    <input placeholder="Please enter your age" type="number" id="age" maxlength="2" min="1" max="200" required />
+                </div>
+                <div id="dropdown-div">
+                    <select id="dropdown">
+                        <option value="" selected disabled>Select an option</option>
+                        <option value="Student">Student</option>
+                        <option value="FTJob">Full Time Job</option>
+                        <option value="FTLearner">Full Time Learner</option>
+                        <option value="PreferNot">Prefer not to say</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div id="recommend-radios-div">
+                    <fieldset id="recommend-radios">
+                        <label for="definitely"><input id="definitely" type="radio" name="recommend" value="Definitely" />Definitely</label>
+                        <br />
+                        <label for="maybe"><input id="maybe" type="radio" name="recommend" value="Maybe" />Maybe</label>
+                        <br />
+                        <label for="notsure"><input id="notSure" type="radio" name="recommend" value="NotSure" />Not Sure</label>
+                    </fieldset>
+                </div>
+                <div id="likeMost-div">
+                    <select id="likeMost">
+                        <option value="" selected disabled>Select an option</option>
+                        <option value="Challenges">Challenges</option>
+                        <option value="Projects">Projects</option>
+                        <option value="Community">Community</option>
+                        <option value="OpenSource">Open Source</option>
+                    </select>
+                </div>
+                <div id="improve-fieldset-div">
+                    <fieldset id="improve-fieldset">
+                        <label><input type="checkbox" name="improve" value="Front-EndProjects" />Front-end Projects</label>
+                        <br />
+                        <label><input type="checkbox" name="improve" value="Back-EndProjects" />Back-end Projects</label>
+                        <br />
+                        <label><input type="checkbox" name="improve" value="DataVisualization" />Data Visualization</label>
+                        <br />
+                        <label><input type="checkbox" name="improve" value="Challenges" />Challenges</label>
+                        <br />
+                        <label><input type="checkbox" name="improve" value="OpenSourceCommunity" />Open Source Community</label>
+                        <br />
+                        <label><input type="checkbox" name="improve" value="GitterHelpRooms" />Gitter Help Rooms</label>
+                        <br />
+                        <label><input type="checkbox" name="improve" value="Videos" />Videos</label>
+                        <br />
+                        <label><input type="checkbox" name="improve" value="City Meetups" />City Meetups</label>
+                        <br />
+                        <label><input type="checkbox" name="improve" value="Wiki" />Wiki</label>
+                        <br />
+                        <label><input type="checkbox" name="improve" value="Forum" />Forum</label>
+                        <br />
+                        <label><input type="checkbox" name="improve" value="AdditionalCourses" />Additional Courses</label>
+                    </fieldset>
+                </div>
+                <div id="additional-comments-div">
+                    <textarea id="additional-comments" placeholder="Please enter your comment here..."></textarea>
+                </div>
+            </div>
+            <div id="submit-div">
+                <input id="submit" type="submit" value="Submit" />
+            </div>
+        </form>
+    </main>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>

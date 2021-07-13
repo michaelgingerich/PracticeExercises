@@ -1,0 +1,71 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        main {
+            display: grid;
+            grid-template-columns: 2fr 2fr 2fr;
+            grid-template-areas: "left-whitespace form right-whitespace";
+        }
+
+        #left-right-form {
+            grid-area: form;
+            display: grid;
+            grid-template-columns: 2fr 2fr;
+            grid-template-areas: "left-form right-form";
+        }
+
+        #left-form {
+            grid-area: left-form;
+            /*background-color: red;*/
+            display: grid;
+            grid-template-rows: 5fr 5fr;
+            grid-template-areas: "area1left" "area2left";
+        }
+
+        #right-form {
+            grid-area: right-form;
+            /*background-color: blue;*/
+            display: grid;
+            grid-template-rows: 5fr 5fr;
+            grid-template-areas: "area1right" "area2right";
+        }
+
+        #area1left {
+            grid-area: area1left;
+            background-color: red;
+        }
+
+        #area2left {
+            grid-area: area2left;
+            background-color: green;
+        }
+
+        #area1right {
+            grid-area: area1right;
+            background-color: blue;
+        }
+
+        #area2right {
+            grid-area: area2right;
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <form id="left-right-form">
+            <div id="left-form">
+                Left-Form
+                <p id="area1left">area1left</p>
+                <p id="area2left">area2left</p>
+            </div>
+            <div id="right-form">
+                Right-Form
+                <p id="area1right">area1right</p>
+                <p id="area2right">area2right</p>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

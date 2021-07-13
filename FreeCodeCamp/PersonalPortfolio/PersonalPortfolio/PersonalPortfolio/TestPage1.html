@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Personal Portfolio</title>
+        <style>
+            body {
+                position: relative;
+                height: 100vh;
+                width: 100vw;
+                background-color: #67676F;
+            }
+
+            #welcome-section {
+                display: flex;
+                flex-wrap: wrap;
+                height: 100vh;
+                align-content: center;
+                text-align: center;
+                background: linear-gradient(180deg, #67676F, #47464B);
+            }
+
+                #welcome-section h1 {
+                    width: 100%;
+                    margin: 0;
+                    font-size: 4em;
+                    color: orangered;
+                }
+
+                #welcome-section h2 {
+                    width: 100%;
+                    margin: 0;
+                    font-size: 3em;
+                    font-style: italic;
+                    color: orangered;
+                }
+
+            #navbar {
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                right: 0px;
+                height: 5em;
+                background: linear-gradient(180deg, #47464B, #67676F);
+            }
+
+                #navbar a, #navbar a:visited {
+                    float: right;
+                    margin: 1em;
+                    text-decoration: none;
+                    color: white;
+                    font-size: 1.2em;
+                }
+
+            #projects {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+                background: linear-gradient(180deg, #47464B, #67676F);
+            }
+
+                #projects h2 {
+                    width: 100%;
+                    font-size: 2.5em;
+                    font-style: italic;
+                    color: white;
+                }
+
+                #projects .grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(25em, 25em));
+                    grid-template-rows: repeat(auto-fill, minmax(25em, 25em));
+                    grid-gap: 2em;
+                    justify-content: center;
+                    width: 100%;
+                    height: calc(25em * 2 + 5em);
+                    margin: 0 10em 0 10em;
+                }
+
+                    #projects .grid .project-tile {
+                        display: flex;
+                        flex-wrap: wrap;
+                        text-align: center;
+                        color: white;
+                    }
+
+                        #projects .grid .project-tile:hover iframe {
+                            position: fixed;
+                            top: 0px;
+                            left: 100px;
+                            right: 100px;
+                            width: 90%;
+                            height: 80%;
+                            border: 1px solid orangered;
+                            /*display: flex;
+                flex-wrap: wrap;
+                text-align: center;
+                color: white;
+                height: 30em;
+                width: 60em;
+                position: static;
+                z-index: 100;*/
+                        }
+
+                    #projects .grid .anchor, #projects .grid .anchor:visited {
+                        text-decoration: none;
+                    }
+
+                    #projects .grid .project-tile iframe {
+                        height: 85%;
+                        width: 100%;
+                    }
+
+                    #projects .grid .project-tile div {
+                        height: 15%;
+                        width: 100%;
+                        padding: .5em 0 0 0;
+                        font-size: 1.3em;
+                        background-color: #67676F;
+                    }
+
+                    #projects .grid .project-tile span {
+                        font-size: 1.3em;
+                        color: #67676F;
+                    }
+
+                /*#projects .grid .project-tile:hover span {
+                font-size: 1.3em;
+                color: orangered;
+            }*/
+
+                #projects .all_projects_anchor, #projects .all_projects_anchor:visited {
+                    height: 2em;
+                    width: 7em;
+                    padding: .8em 0 0 0;
+                    font-size: 1.7em;
+                    font-weight: bold;
+                    color: orangered;
+                    background-color: #67676F;
+                    border: 2px white solid;
+                    text-decoration: none;
+                }
+
+            #contact {
+                display: flex;
+                flex-wrap: wrap;
+                height: 50vh;
+                align-content: center;
+                text-align: center;
+                background: linear-gradient(180deg, #67676F, #47464B);
+            }
+
+                #contact h1 {
+                    width: 100%;
+                    color: orangered;
+                }
+
+                #contact h2 {
+                    width: 100%;
+                    color: orangered;
+                    font-size: 1.5em;
+                    font-style: italic;
+                }
+
+                #contact div {
+                    width: 100%;
+                }
+
+                #contact a {
+                    margin: 3em 1em 3em 1em;
+                    font-size: 1.5em;
+                    color: white;
+                }
+        </style>
+    </head>
+    <body>
+        <section id="welcome-section">
+             <nav id="navbar">
+                 <a href="#welcome-section">About</a>
+                 <a href="#projects">Work</a>
+                 <a href="#contact">Contact</a>
+             </nav>
+             <h1>Hey I am Michael</h1>
+             <h2>An aspiring coder</h2>
+         </section>
+        <section id="projects">
+            <h2>These are some of my projects</h2>
+            <div class="grid">
+                <a href="https://codepen.io/michaelgingerich/full/jONMyBx" class="project-tile anchor">
+                    <iframe src="https://codepen.io/michaelgingerich/full/jONMyBx"></iframe>
+                    <div><span>< </span>FCC Project: Tribute Page<span> /></span></div>
+                </a>
+                <a href="https://codepen.io/michaelgingerich/full/pozamGe" class="project-tile anchor">
+                    <iframe src="https://codepen.io/michaelgingerich/full/pozamGe" class="project-tile"></iframe>
+                    <div><span>< </span>FCC Project: Survey Form<span> /></span></div>
+                </a>
+                <a href="https://codepen.io/michaelgingerich/full/BaBYeeo" class="project-tile anchor">
+                    <iframe src="https://codepen.io/michaelgingerich/full/BaBYeeo" class="project-tile"></iframe>
+                    <div><span>< </span>FCC Project: Product Landing Page<span> /></span></div>
+                </a>
+                <a href="https://codepen.io/michaelgingerich/full/rNBQQQN" class="project-tile anchor">
+                    <iframe src="https://codepen.io/michaelgingerich/full/rNBQQQN" class="project-tile"></iframe>
+                    <div><span>< </span>FCC Project: Technical Documentation Page<span> /></span></div>
+                </a>
+            </div>
+            <a href="https://codepen.io/michaelgingerich/" class="all_projects_anchor" target="_blank">Show all ></a>
+        </section>
+        <section id="contact">
+            <h1>Let's create something...</h1>
+            <h2>Let's start today</h2>
+            <div>
+                <a href="https://codepen.io/michaelgingerich" class="fa fa-codepen" id="profile-link" target="_blank"> CodePen</a>
+            </div>
+        </section>
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    </body>
+</html>

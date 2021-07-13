@@ -1,0 +1,442 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Landing Page</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <style>
+        body {
+            background-color: lightgray;
+        }
+
+        #header {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #logo-nav {
+            position: fixed;
+            top: 0px;
+            padding: 1em 0 0 0;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            background-color: lightgray;
+        }
+
+        #logo-div {
+            width: 50%;
+        }
+
+        #header-img {
+            width: 20em;
+        }
+
+        #nav-div {
+            width: 50%;
+        }
+
+        #nav-bar {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .nav-link, .nav-link:visited {
+            color: black;
+            text-decoration: none;
+            font-size: 1.2em;
+            background-color: transparent;
+        }
+
+        #slogan-form {
+            margin: 1em 0 0 0;
+            padding: 1em 0 0 0;
+            flex-direction: row;
+            width: 100%;
+            text-align: center;
+        }
+
+        @media (max-width: 800px) {
+            /*Begin values used for @media (max-width: 800px)*/
+            #logo-div {
+                width: 60%;
+            }
+
+            #nav-div {
+                width: 40%;
+            }
+            /*End values used for @media (max-width: 800px)*/
+
+            /*Begin values common to all media queries*/
+            #nav-bar {
+                display: flex;
+                flex-direction: column;
+            }
+
+            #slogan-form {
+                margin: 2em 0 0 0;
+                padding: 1em 0 0 0;
+                flex-direction: row;
+                width: 100%;
+                text-align: center;
+            }
+            /*End values common to all media queries*/
+        }
+
+        @media (max-width: 600px) {
+            /*Begin values used for @media (max-width: 600px)*/
+            #logo-div {
+                width: 65%;
+            }
+
+            #nav-div {
+                width: 35%;
+            }
+            /*End values used for @media (max-width: 600px)*/
+
+            /*Begin values common to all media queries*/
+            #nav-bar {
+                display: flex;
+                flex-direction: column;
+            }
+
+            #slogan-form {
+                margin: 2em 0 0 0;
+                padding: 1em 0 0 0;
+                flex-direction: row;
+                width: 100%;
+                text-align: center;
+            }
+            /*End values common to all media queries*/
+        }
+
+        @media (max-width: 500px) {
+            /*Begin values used for @media (max-width: 500px)*/
+            #logo-div {
+                width: 70%;
+            }
+
+            #nav-div {
+                width: 30%;
+            }
+            /*End values used for @media (max-width: 500px)*/
+
+            /*Begin values common to all media queries*/
+            #nav-bar {
+                display: flex;
+                flex-direction: column;
+            }
+
+            #slogan-form {
+                margin: 2em 0 0 0;
+                padding: 1em 0 0 0;
+                flex-direction: row;
+                width: 100%;
+                text-align: center;
+            }
+            /*End values common to all media queries*/
+        }
+
+        #email {
+            width: 20em;
+        }
+
+        #submit {
+            height: 2em;
+            width: 7em;
+            background-color: orange;
+            font-weight: bold;
+            font-size: 1em;
+        }
+
+        #features {
+            margin: 5em 0 0 0;
+            padding: 1em 0 0 0;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 20% 60% 20%;
+            grid-template-rows: auto;
+            grid-template-areas: "left-whitespace materials right-whitespace" "left-whitespace shipping right-whitespace" "left-whitespace quality right-whitespace";
+        }
+
+        #features-left-whitespace {
+            grid-area: left-whitespace;
+        }
+
+        #features-right-whitespace {
+            grid-area: right-whitespace;
+        }
+
+        .features-heading {
+            margin: 0;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        #materials {
+            grid-area: materials;
+            display: grid;
+            grid-template-columns: 5em 1fr;
+            grid-template-areas: "materials-icon materials-text";
+        }
+
+        #shipping {
+            grid-area: shipping;
+            display: grid;
+            grid-template-columns: 5em 1fr;
+            grid-template-areas: "shipping-icon shipping-text";
+        }
+
+        #quality {
+            grid-area: quality;
+            display: grid;
+            grid-template-columns: 5em 1fr;
+            grid-template-areas: "quality-icon quality-text";
+        }
+
+        .materials-text {
+            margin: 0 0 2em 0;
+        }
+
+        #materials-icon {
+            color: orange;
+            grid-area: materials-icon;
+        }
+
+        #materials-text {
+            grid-area: materials-text;
+        }
+
+        #shipping-icon {
+            color: orange;
+            grid-area: shipping-icon;
+        }
+
+        #shipping-text {
+            grid-area: shipping-text;
+        }
+
+        #quality-icon {
+            color: orange;
+            grid-area: quality-icon;
+        }
+
+        #quality-text {
+            grid-area: quality-text;
+        }
+
+        #how-it-works {
+            /*display: grid;
+                grid-template-columns: 25% 50% 25%;
+                justify-content: center;*/
+        }
+
+        #video {
+            margin: 5em auto 5em auto;
+            display: block;
+        }
+
+        #models {
+            display: flex;
+            width: 62em;
+            margin: auto;
+        }
+
+        .model {
+            width: 20em;
+            margin: 1em;
+            border: 1px solid black;
+        }
+
+        .model-heading {
+            height: 2em;
+            background-color: lightgray;
+            font-weight: bold;
+            font-size: 1.5em;
+            text-align: center;
+            padding: .5em 0 0 0;
+            border-bottom: 1px solid black;
+        }
+
+        .model-text {
+            background-color: white;
+            padding: .5em 0 0 0;
+            text-align: center;
+        }
+
+            .model-text strong {
+                font-weight: bold;
+                font-size: 1.5em;
+            }
+
+        .model-submit {
+            height: 2em;
+            width: 7em;
+            margin: 1em;
+            background-color: orange;
+            font-weight: bold;
+            font-size: 1em;
+        }
+
+        @media (max-width: 62em) {
+            #models {
+                /*Begin values used for @media (max-width: 62em)*/
+                flex-wrap: wrap;
+                width: 20em;
+                /*End values used for @media (max-width: 62em)*/
+                display: flex;
+                margin: auto;
+            }
+        }
+
+        /*footer {
+            display: flex;
+            width: 30em;
+        }*/
+
+        #footer-nav {
+            float: right;
+        }
+
+        #footer-nav .nav-link {
+            padding: 0 1em 0 1em;
+            font-size: 1em;
+        }
+
+        footer p {
+            float: right;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div id="logo-nav">
+            <div id="logo-div">
+                <img id="header-img" src="https://s3.amazonaws.com/freecodecamp/original_trombones.png" alt="Original Trombones" />
+            </div>
+            <div id="nav-div">
+                <nav id="nav-bar">
+                    <a class="nav-link" href="#features">Features</a>
+                    <a class="nav-link" href="#how_it_works">How It Works</a>
+                    <a class="nav-link" href="#models">Pricing</a>
+                </nav>
+            </div>
+        </div>
+        <div id="slogan-form">
+            <div>
+                <h1>Handcrafted, home-made masterpieces</h1>
+            </div>
+            <div>
+                <form id="form" action="https://www.freecodecamp.com/email-submit">
+                    <input id="email" type="email" placeholder="Enter your email address" name="email"/>
+                    <br>
+                    <br>
+                    <input id="submit" type="submit" value="Get Started" />
+                </form>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="features">
+            <div id="features-left-whitespace"></div>
+            <div id="features-right-whitespace"></div>
+            <div id="materials">
+                <div id="materials-icon" class="fa fa-3x fa-fire">
+                </div>
+                <div id="materials-text">
+                    <p class="features-heading">Premium Materials</p>
+                    <p class="materials-text">Our trombones use the shiniest brass which is sourced locally. This will increase the longevity of your purchase.</p>
+                </div>
+            </div>
+            <div id="shipping">
+                <div id="shipping-icon" class="fa fa-3x fa-truck">
+                </div>
+                <div id="shipping-text">
+                    <p class="features-heading">Fast Shipping</pclass="features-heading">
+                    <p class="materials-text">We make sure you recieve your trombone as soon as we have finished making it. We also provide free returns if you are not satisfied.</p>
+                </div>
+            </div>
+            <div id="quality">
+                <div id="quality-icon" class="fa fa-3x fa-battery-full">
+                </div>
+                <div id="quality-text">
+                    <p class="features-heading">Quality Assurance</pclass="features-heading">
+                    <p class="materials-text">For every purchase you make, we will ensure there are no damages or faults and we will check and test the pitch of your instrument.</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div id="how_it_works">
+                <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/y8Yv4pnO7qc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div id="models">
+                <div class="model">
+                    <div class="model-heading">Tenor Trombone</div>
+                    <div class="model-text">
+                        <strong>$600</strong>
+                        <br />
+                        Lorem ipsum.
+                        <br />
+                        Lorem ipsum.
+                        <br />
+                        Lorem ipsum dolor.
+                        <br />
+                        Lorem ipsum.
+                        <br />
+                        <form>
+                            <input class="model-submit" type="submit" value="Select" />
+                        </form>
+                    </div>
+                </div>
+                <div class="model">
+                    <div class="model-heading">Bass Trombone</div>
+                    <div class="model-text">
+                        <strong>$900</strong>
+                        <br />
+                        Lorem ipsum.
+                        <br />
+                        Lorem ipsum.
+                        <br />
+                        Lorem ipsum dolor.
+                        <br />
+                        Lorem ipsum.
+                        <br />
+                        <form>
+                            <input class="model-submit" type="submit" value="Select" />
+                        </form>
+                    </div>
+                </div>
+                <div class="model">
+                    <div class="model-heading">Valve Trombone</div>
+                    <div class="model-text">
+                        <strong>$1200</strong>
+                        <br />
+                        Lorem ipsum.
+                        <br />
+                        Lorem ipsum.
+                        <br />
+                        Lorem ipsum dolor.
+                        <br />
+                        Lorem ipsum.
+                        <br />
+                        <form>
+                            <input class="model-submit" type="submit" value="Select" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="footer-nav">
+            <a class="nav-link" href="#">Privacy</a>
+            <a class="nav-link" href="#">Terms</a>
+            <a class="nav-link" href="#">Contact</a>
+        </div>
+        <br />
+        <p>Copyright 2016, Original Trombones</p>
+    </footer>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>
