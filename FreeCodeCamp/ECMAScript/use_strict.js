@@ -4,7 +4,7 @@
 let catName;
 let quote;
 
-function catTalk() {
+function practiceFunction() {
   "use strict";
   x = 3.14;
 
@@ -12,4 +12,4 @@ function catTalk() {
   quote = catName + " says Meow!";
 
 }
-catTalk();
+practiceFunction();
